@@ -1,0 +1,27 @@
+group 'com.feexon'
+version '1.0'
+
+apply plugin: 'java'
+
+def jdkVersion = 1.7
+sourceCompatibility = jdkVersion
+targetCompatibility = jdkVersion
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'org.json:json:20160212'
+    testCompile 'junit:junit:4.+'
+}
+
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        excludeDirs += [file('.gradle'), file('gradle'), file('.idea')]
+    }
+}
